@@ -6,7 +6,7 @@ import { AnimatedGroup } from "@/components/ui/animated-group";
 
 const CobeGlobePulse = dynamic(
   () => import("@/components/ui/cobe-globe-pulse").then((m) => m.CobeGlobePulse),
-  { ssr: false, loading: () => <div className="w-full h-full bg-muted/30 rounded-full animate-pulse" /> }
+  { ssr: false, loading: () => <div className="w-full h-full rounded-full bg-blue-950/30 animate-pulse" /> }
 );
 
 const regions = [
@@ -19,10 +19,9 @@ const regions = [
 
 export function CoverageGlobe() {
   return (
-    <section className="py-24 bg-[#0a0f1e] overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Text */}
           <AnimatedGroup preset="slide-up" className="flex flex-col gap-8">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
@@ -33,13 +32,11 @@ export function CoverageGlobe() {
                 <span className="text-blue-400">ejecución digital.</span>
               </h2>
             </div>
-
-            {/* Region list */}
             <div className="flex flex-col gap-3">
               {regions.map((region) => (
                 <div
                   key={region.name}
-                  className="flex flex-col gap-0.5 p-4 rounded-xl border border-white/10 bg-white/5 hover:border-blue-500/30 transition-colors"
+                  className="flex flex-col gap-0.5 p-4 rounded-xl border border-blue-500/15 bg-slate-950/55 backdrop-blur-xl hover:border-blue-400/30 transition-colors"
                 >
                   <p className="text-sm font-semibold text-white">{region.name}</p>
                   <p className="text-xs text-slate-400">{region.states}</p>
@@ -48,10 +45,9 @@ export function CoverageGlobe() {
             </div>
           </AnimatedGroup>
 
-          {/* Globe */}
           <AnimatedGroup preset="fade" className="flex justify-center">
             <div className="w-full max-w-sm aspect-square">
-              <Suspense fallback={<div className="w-full h-full rounded-full bg-slate-800 animate-pulse" />}>
+              <Suspense fallback={<div className="w-full h-full rounded-full bg-blue-950/30 animate-pulse" />}>
                 <CobeGlobePulse className="w-full h-full" />
               </Suspense>
             </div>

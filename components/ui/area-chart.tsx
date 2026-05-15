@@ -19,6 +19,7 @@ interface AreaChartProps {
   className?: string;
   showLegend?: boolean;
   showGrid?: boolean;
+  dataKey?: string;
 }
 
 export function AreaChart({
@@ -27,6 +28,7 @@ export function AreaChart({
   className,
   showLegend = true,
   showGrid = true,
+  dataKey = "month",
 }: AreaChartProps) {
   return (
     <div className={cn("w-full", className)}>
@@ -36,30 +38,30 @@ export function AreaChart({
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(100,116,139,0.15)" />
           )}
           <XAxis
-            dataKey="month"
-            tick={{ fill: "#64748b", fontSize: 11 }}
+            dataKey={dataKey}
+            tick={{ fill: "#4a5568", fontSize: 10 }}
             axisLine={false}
             tickLine={false}
           />
           <YAxis
-            tick={{ fill: "#64748b", fontSize: 11 }}
+            tick={{ fill: "#4a5568", fontSize: 10 }}
             axisLine={false}
             tickLine={false}
             tickFormatter={(v) => `${v}%`}
           />
           <Tooltip
             contentStyle={{
-              background: "rgba(15,23,42,0.95)",
-              border: "1px solid rgba(59,130,246,0.3)",
-              borderRadius: "8px",
-              color: "#e2e8f0",
-              fontSize: "12px",
+              background: "rgba(8,14,32,0.97)",
+              border: "1px solid rgba(74,127,193,0.25)",
+              borderRadius: "10px",
+              color: "#cbd5e1",
+              fontSize: "11px",
             }}
             formatter={(value) => [`${value ?? ""}%`]}
           />
           {showLegend && (
             <Legend
-              wrapperStyle={{ fontSize: "12px", color: "#64748b" }}
+              wrapperStyle={{ fontSize: "11px", color: "#4a5568" }}
             />
           )}
           {series.map((s, i) => (

@@ -4,10 +4,7 @@ import React, { useState } from "react";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
-import {
-  BarChart2, MessageSquare, Target, Code2,
-  Radio, MapPin
-} from "lucide-react";
+import { BarChart2, MessageSquare, Target, Code2, Radio, MapPin } from "lucide-react";
 
 const categories = [
   {
@@ -82,23 +79,23 @@ export function ServicesBento() {
   const activeCategory = categories.find((c) => c.id === active)!;
 
   return (
-    <section id="servicios" className="py-24 bg-muted/30">
+    <section id="servicios" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedGroup preset="slide-up" className="text-center mb-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               Capacidades
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
               Qué hacemos
             </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-base">
+            <p className="mt-4 text-slate-400 max-w-xl mx-auto text-sm">
               Seis verticales especializadas que trabajan como un solo sistema integrado.
             </p>
           </div>
         </AnimatedGroup>
 
-        {/* Category tabs — horizontal scroll on mobile */}
+        {/* Category tabs */}
         <div className="flex gap-2 overflow-x-auto pb-2 mb-8 no-scrollbar">
           {categories.map((cat) => (
             <button
@@ -107,8 +104,8 @@ export function ServicesBento() {
               className={cn(
                 "shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer border",
                 active === cat.id
-                  ? "bg-primary text-primary-foreground border-primary shadow-md"
-                  : "bg-background text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                  ? "bg-blue-600/80 text-white border-blue-500/60 shadow-lg shadow-blue-500/20 backdrop-blur-sm"
+                  : "bg-slate-950/50 text-slate-400 border-blue-500/15 hover:border-blue-400/30 hover:text-white backdrop-blur-sm"
               )}
             >
               <cat.icon size={15} />
@@ -132,11 +129,6 @@ export function ServicesBento() {
           </BentoGrid>
         </AnimatedGroup>
       </div>
-
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
     </section>
   );
 }

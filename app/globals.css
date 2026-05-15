@@ -6,19 +6,19 @@
 
 :root {
   --card: #ffffff;
-  --ring: #3b82f6;
-  --input: #e5e7eb;
-  --muted: #f9fafb;
-  --accent: #e0f2fe;
+  --ring: #4a6fa5;
+  --input: #e2e8f0;
+  --muted: #f8fafc;
+  --accent: #dbeafe;
   --border: #e2e8f0;
   --radius: 0.5rem;
-  --chart-1: #3b82f6;
-  --chart-2: #2563eb;
-  --chart-3: #1d4ed8;
-  --chart-4: #1e40af;
-  --chart-5: #1e3a8a;
+  --chart-1: #4a7fc1;
+  --chart-2: #3a6aad;
+  --chart-3: #2d5896;
+  --chart-4: #214880;
+  --chart-5: #1a3a6a;
   --popover: #ffffff;
-  --primary: #1e40af;
+  --primary: #2d5896;
   --sidebar: #f9fafb;
   --font-mono: "JetBrains Mono", monospace;
   --font-sans: "Inter", sans-serif;
@@ -44,19 +44,19 @@
 
 .dark {
   --card: #1e293b;
-  --ring: #3b82f6;
-  --input: #334155;
-  --muted: #1e293b;
-  --accent: #1e3a8a;
-  --border: #334155;
+  --ring: #4a7fc1;
+  --input: #1e2d42;
+  --muted: #131c2e;
+  --accent: #162340;
+  --border: #1e2d42;
   --radius: 0.5rem;
-  --chart-1: #60a5fa;
-  --chart-2: #3b82f6;
-  --chart-3: #2563eb;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
-  --popover: #1e293b;
-  --primary: #3b82f6;
+  --chart-1: #6b9fd4;
+  --chart-2: #4a7fc1;
+  --chart-3: #3a6aad;
+  --chart-4: #2d5896;
+  --chart-5: #214880;
+  --popover: #0d1526;
+  --primary: #4a7fc1;
   --sidebar: #0f172a;
   --secondary: #1e293b;
   --background: #0a0f1e;
@@ -118,7 +118,7 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: #080808;
   color: var(--color-foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -130,4 +130,39 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ShineBorder animation */
+@keyframes shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-shine {
+  animation: shine var(--duration) linear infinite;
+}
+
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Premium animated gradient for post-hero sections */
+@keyframes premium-gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.premium-animated-gradient {
+  background:
+    radial-gradient(circle at 15% 25%, rgba(255,255,255,0.018), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(148,163,184,0.012), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(100,116,139,0.01), transparent 40%);
+  background-size: 200% 200%;
+  animation: premium-gradient-shift 22s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-animated-gradient { animation: none; }
 }

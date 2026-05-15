@@ -30,7 +30,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border/60 shadow-sm"
+            ? "bg-slate-950/80 backdrop-blur-xl border-b border-border/60 shadow-sm"
             : "bg-transparent"
         )}
       >
@@ -39,7 +39,7 @@ export function Navbar() {
             {/* Logo */}
             <a
               href="#"
-              className="font-bold text-xl tracking-tight text-foreground flex items-center gap-1"
+              className="font-bold text-xl tracking-tight text-white flex items-center gap-1"
             >
               <span className="text-primary">stout</span>
               <span>lab</span>
@@ -51,7 +51,7 @@ export function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200 cursor-pointer"
+                  className="text-sm text-slate-400 hover:text-white transition-colors duration-200 cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -62,7 +62,7 @@ export function Navbar() {
             <div className="hidden md:flex items-center gap-3">
               <a
                 href="#contacto"
-                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-slate-700/70 border border-slate-600/40 text-white text-sm font-medium hover:bg-slate-600/70 transition-colors duration-200 cursor-pointer backdrop-blur-sm"
               >
                 Agendar diagnóstico
               </a>
@@ -82,14 +82,14 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-background/98 backdrop-blur-xl flex flex-col pt-20 px-6">
+        <div className="fixed inset-0 z-40 bg-slate-950/98 backdrop-blur-xl flex flex-col pt-20 px-6">
           <nav className="flex flex-col gap-6 py-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-2xl font-semibold text-foreground hover:text-primary transition-colors cursor-pointer"
+                className="text-2xl font-semibold text-white hover:text-primary transition-colors cursor-pointer"
               >
                 {link.label}
               </a>

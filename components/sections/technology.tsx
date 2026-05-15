@@ -48,21 +48,21 @@ const techTools = [
 
 export function Technology() {
   return (
-    <section id="tecnologia" className="py-24 bg-muted/30">
+    <section id="tecnologia" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedGroup preset="slide-up" className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
                 Tecnología propia
               </p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 Un solo sistema.
                 <br />
-                <span className="text-muted-foreground font-normal">Captura, análisis y seguimiento.</span>
+                <span className="text-slate-400 font-normal">Captura, análisis y seguimiento.</span>
               </h2>
             </div>
-            <p className="text-muted-foreground leading-relaxed lg:text-right">
+            <p className="text-slate-400 leading-relaxed text-sm lg:text-right">
               Creamos herramientas a la medida para que la operación, captura, análisis y seguimiento vivan en un mismo sistema. Sin hojas de cálculo. Sin silos de información.
             </p>
           </div>

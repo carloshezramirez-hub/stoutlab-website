@@ -9,21 +9,27 @@ import { CoverageGlobe } from "@/components/sections/coverage-globe";
 import { Technology } from "@/components/sections/technology";
 import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/sections/footer";
+import ParticlesBackground from "@/components/ui/particles-bg";
 
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-      <ValueFlow />
-      <ServicesBento />
-      <IntelligenceChart />
-      <VisualStack />
-      <NationalCoverageSlider />
-      <CoverageGlobe />
-      <Technology />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      {/* Fixed particles behind everything — visible across the entire page */}
+      <ParticlesBackground />
+
+      <main className="relative min-h-screen overflow-x-hidden text-foreground" style={{ zIndex: 1 }}>
+        <Navbar />
+        <Hero />
+        <ValueFlow />
+        <ServicesBento />
+        <IntelligenceChart />
+        <VisualStack />
+        <NationalCoverageSlider />
+        <CoverageGlobe />
+        <Technology />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }
