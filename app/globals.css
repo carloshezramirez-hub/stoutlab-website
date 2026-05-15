@@ -1,26 +1,133 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
+  --card: #ffffff;
+  --ring: #3b82f6;
+  --input: #e5e7eb;
+  --muted: #f9fafb;
+  --accent: #e0f2fe;
+  --border: #e2e8f0;
+  --radius: 0.5rem;
+  --chart-1: #3b82f6;
+  --chart-2: #2563eb;
+  --chart-3: #1d4ed8;
+  --chart-4: #1e40af;
+  --chart-5: #1e3a8a;
+  --popover: #ffffff;
+  --primary: #1e40af;
+  --sidebar: #f9fafb;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+  --secondary: #f1f5f9;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --destructive: #ef4444;
+  --sidebar-ring: #3b82f6;
+  --sidebar-accent: #e0f2fe;
+  --sidebar-border: #e5e7eb;
+  --card-foreground: #0f172a;
+  --sidebar-primary: #3b82f6;
+  --muted-foreground: #64748b;
+  --accent-foreground: #1e3a8a;
+  --popover-foreground: #0f172a;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --secondary-foreground: #475569;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #1e3a8a;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+.dark {
+  --card: #1e293b;
+  --ring: #3b82f6;
+  --input: #334155;
+  --muted: #1e293b;
+  --accent: #1e3a8a;
+  --border: #334155;
+  --radius: 0.5rem;
+  --chart-1: #60a5fa;
+  --chart-2: #3b82f6;
+  --chart-3: #2563eb;
+  --chart-4: #1d4ed8;
+  --chart-5: #1e40af;
+  --popover: #1e293b;
+  --primary: #3b82f6;
+  --sidebar: #0f172a;
+  --secondary: #1e293b;
+  --background: #0a0f1e;
+  --foreground: #e2e8f0;
+  --destructive: #ef4444;
+  --sidebar-ring: #3b82f6;
+  --sidebar-accent: #1e3a8a;
+  --sidebar-border: #334155;
+  --card-foreground: #e2e8f0;
+  --sidebar-primary: #3b82f6;
+  --muted-foreground: #94a3b8;
+  --accent-foreground: #bfdbfe;
+  --popover-foreground: #e2e8f0;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #e2e8f0;
+  --secondary-foreground: #e2e8f0;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #bfdbfe;
+  --sidebar-primary-foreground: #ffffff;
 }
 
 @theme inline {
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-popover: var(--popover);
+  --color-primary: var(--primary);
+  --color-sidebar: var(--sidebar);
+  --color-secondary: var(--secondary);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-destructive: var(--destructive);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--color-border);
+  outline-color: color-mix(in oklab, var(--color-ring) 50%, transparent);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
