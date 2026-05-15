@@ -41,7 +41,7 @@ export default function ParticlesBackground() {
           enable: true,
           distance: isMobile ? 120 : 170,
           color: "#e2e8f0",
-          opacity: 0.75,
+          opacity: 0.6,
           width: 1.4,
         },
         move: {
