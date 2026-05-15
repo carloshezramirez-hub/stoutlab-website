@@ -79,9 +79,9 @@ export function ServicesBento() {
   const activeCategory = categories.find((c) => c.id === active)!;
 
   return (
-    <section id="servicios" className="py-24 relative">
+    <section id="servicios" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedGroup preset="slide-up" className="text-center mb-12">
+        <AnimatedGroup preset="slide-up" className="text-center mb-8 sm:mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               Capacidades

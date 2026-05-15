@@ -48,9 +48,9 @@ const techTools = [
 
 export function Technology() {
   return (
-    <section id="tecnologia" className="py-24 relative">
+    <section id="tecnologia" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedGroup preset="slide-up" className="mb-12">
+        <AnimatedGroup preset="slide-up" className="mb-8 sm:mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">

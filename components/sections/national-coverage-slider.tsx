@@ -17,24 +17,24 @@ const ESTADOS = [
 
 export function NationalCoverageSlider() {
   return (
-    <section id="cobertura" className="py-24 relative overflow-hidden">
+    <section id="cobertura" className="py-16 sm:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedGroup preset="slide-up" className="text-center mb-12">
+        <AnimatedGroup preset="slide-up" className="text-center mb-8 sm:mb-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               Alcance nacional
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
               Cobertura operativa{" "}
               <span className="text-blue-400">nacional</span>
             </h2>
-            <p className="mt-4 text-slate-400 max-w-xl mx-auto text-sm">
+            <p className="mt-3 text-slate-400 max-w-xl mx-auto text-sm">
               Presencia y capacidad operativa en los 32 estados de la República Mexicana.
             </p>
           </div>
         </AnimatedGroup>
 
-        <div className="flex justify-center gap-8 sm:gap-16 mb-12">
+        <div className="flex justify-center gap-6 sm:gap-16 mb-8 sm:mb-12">
           {[
             { value: "32", label: "estados" },
             { value: "2,469", label: "municipios" },

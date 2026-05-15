@@ -46,9 +46,9 @@ const steps = [
 
 export function ValueFlow() {
   return (
-    <section id="propuesta" className="py-24 relative">
+    <section id="propuesta" className="py-16 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedGroup preset="slide-up" className="text-center mb-16">
+        <AnimatedGroup preset="slide-up" className="text-center mb-10 sm:mb-16">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-400 mb-3">
               Metodología

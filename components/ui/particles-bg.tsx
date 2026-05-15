@@ -22,7 +22,7 @@ export default function ParticlesBackground() {
     window.particlesJS("particles-global", {
       particles: {
         number: {
-          value: reducedMotion ? 40 : isMobile ? 60 : 160,
+          value: reducedMotion ? 40 : isMobile ? 140 : 100,
           density: { enable: true, value_area: 800 },
         },
         color: { value: ["#ffffff", "#e2e8f0", "#cbd5e1", "#94a3b8"] },
@@ -41,7 +41,7 @@ export default function ParticlesBackground() {
           enable: true,
           distance: isMobile ? 120 : 170,
           color: "#e2e8f0",
-          opacity: 0.55,
+          opacity: 0.75,
           width: 1.4,
         },
         move: {

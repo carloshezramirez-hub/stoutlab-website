@@ -15,7 +15,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-16"
     >
       {/* Vignette — darkens sides and top only, never the bottom edge */}
       <div
